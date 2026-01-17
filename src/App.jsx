@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import languages from "./data/languages.js"
 
 
 function App() {
@@ -11,13 +12,20 @@ function App() {
         <h1>Learn Web Development</h1>
 
         <div className='btnContainer'>
-          <button className='activeBtn'>HTML</button>
+          
+          {languages.map((language, i) => {
+            return <button className='activeBtn'>{language.title}</button>
+          }
+          )}
+
 
         </div>
 
         <div className='card'>
-          <h2>titolo</h2>
-          <p>contenuto</p>
+          <h2>{languages[0].title}</h2>
+          <p>{languages[0].description}</p>
+
+         
 
         </div>
 
