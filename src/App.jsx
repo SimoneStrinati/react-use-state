@@ -3,7 +3,7 @@ import languages from "./data/languages.js"
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState(1)
 
   return (
     <>
@@ -14,7 +14,7 @@ function App() {
         <div className='btnContainer'>
           
           {languages.map((language, i) => {
-            return <button className='activeBtn'>{language.title}</button>
+            return <button className='activeBtn' onClick={() => setSelectedIndex(i)}>{language.title}</button>
           }
           )}
 
@@ -22,8 +22,8 @@ function App() {
         </div>
 
         <div className='card'>
-          <h2>{languages[0].title}</h2>
-          <p>{languages[0].description}</p>
+          <h2>{languages[selectedIndex].title}</h2>
+          <p>{languages[selectedIndex].description}</p>
 
          
 
