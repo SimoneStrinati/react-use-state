@@ -5,6 +5,7 @@ import languages from "./data/languages.js"
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
+
   return (
     <>
 
@@ -12,12 +13,15 @@ function App() {
         <h1>Learn Web Development</h1>
 
         <div className='btnContainer'>
-          
+
           {languages.map((language, i) => {
-            return <button key={i} className= {i === selectedIndex ? "activeBtn" : "noActiveBtn"}  onClick={() => setSelectedIndex(i)}>{language.title}</button>
+            
+            const changeColorBtn = i === selectedIndex ? "activeBtn" : "noActiveBtn";
+
+            return <button key={i} className={changeColorBtn} onClick={() => setSelectedIndex(i)}>{language.title}</button>
           }
           )}
-          
+
         </div>
 
         <div className='card'>
